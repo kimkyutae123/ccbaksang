@@ -1,40 +1,9 @@
- HEAD
-# ccbaksang
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
- 65931fd (Initial commit from Create Next App)
+개발 요구사항
+ 1. 데이터의 index는 0~49범위입니다. 데이터의 순서는 무작위로 내려갑니다. 0~49까지 오름차순으로 표시해주어야 합니다.
+ 2. image는 null인 상태로 내려가지만, 해당 이미지가 차지할 공간을 확보해서 시인성이 좋게 디자인해야 합니다.
+ 3. 최소 2개 이상 품절된 상품이 있습니다. 품절된 상품은 index와 관계없이 가장 하단에 위치시켜야 합니다. 해당 상품을 제외한 나머지가 index순서를 유지해야 합니다. 또한 품절된 상품의 경우 품절을 인지할 수 있어야 합니다.
+ 4. 응답에 1 ~ 5초 사이의 무작위 지연이 있습니다. 해당 지연시간동안 사용자 경험을 고려하여 개발하여야 합니다.
+ 5. Typescript / Next.js를 사용하여야 하는 것 외에 기술스택 제약사항은 없습니다. 외부 라이브러리 자유롭게 사용하셔도 됩니다.
+ 6. 참고 디자인은 별도 제공하지 않습니다. 사용자 경험을 중시한 디자인으로 자유롭게 개발해주세요. PC와 모바일 반응형으로 개발되어야 합니다.
+ 7. 개발 소요시간에 따른 가산점이 있습니다. 빠르게 제출할 수록 높은 가산점이 부여됩니다.
