@@ -1,4 +1,5 @@
 // src/app/product/[id]/page.tsx
+import ProductAction from "@/components/ProductAction";
 interface Product {
     index: number;
     name: string;
@@ -77,18 +78,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
 
 
 
-                <div className="sticky bottom-0 left-0 right-0 p-4 bg-white border-t">
-                    <button
-                        disabled={isSoldOut}
-                        className={`w-full h-14 rounded-xl font-bold text-lg shadow-md transition-all ${
-                            isSoldOut
-                                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                                : 'bg-orange-500 text-white hover:bg-orange-600 active:scale-95'
-                        }`}
-                    >
-                        {isSoldOut ? '공동구매 종료' : '공동구매 참여하기'}
-                    </button>
-                </div>
+                <ProductAction product={product} />
             </div>
         </div>
     );

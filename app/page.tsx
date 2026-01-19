@@ -1,6 +1,8 @@
 // src/app/page.tsx
 import Link from "next/link";
+import AddToCartButton from "@/components/AddToCartButton";
 import DraggableScroll from "@/components/DraggableScroll";
+import CartBadge from "@/components/CartBadge";
 interface Product {
     index: number;
     name: string;
@@ -20,7 +22,7 @@ export default async function Home({searchParams,}: {
             }) {
     const {category, search} = await searchParams;
     // 값이 없을 때를 대비한 기본값 설정
-    const selectedCategory = category || `전체`;
+    const selectedCategory = category || 'C000';
     const searchQuery = search || '';
 
     const response = await fetch(`https://api.zeri.pics`, {cache: `no-store`});
@@ -44,11 +46,11 @@ export default async function Home({searchParams,}: {
 
         if (name.includes(`요거트`) || name.includes(`주스`) || name.includes(`우유`) || name.includes(`브리즈`)) return `C006`
 
-        if (name.includes(`김치`) || name.includes(`핑크솔트`) || name.includes(`올리브유`) || name.includes(`굴비`)) return `C007`
+        if (name.includes(`김치`) || name.includes(`핑크솔트`) || name.includes(`올리브유`) || name.includes(`굴비`) || name.includes('감자'))  return `C007`
     };
 
     const categories = [
-        { name: '전체', id: '전체' },
+        { name: '전체', id: 'C000' },
         { name: '과일', id: 'C001' },
         { name: '채소', id: 'C002' },
         { name: '밀키트', id: 'C003' },
@@ -94,7 +96,7 @@ export default async function Home({searchParams,}: {
     })
         .filter(p =>{
 
-            const isCategoryMatch = selectedCategory === `전체` || getCategory(p.name) === selectedCategory;
+            const isCategoryMatch = selectedCategory === `C000` || getCategory(p.name) === selectedCategory;
             const categoryId = getCategory(p.name); // 이 상품의 카테고리 ID
             const categoryName = getCategoryName(categoryId); // 이 상품의 카테고리 한글명
 
@@ -121,13 +123,15 @@ export default async function Home({searchParams,}: {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* --- 헤더 영역 --- */}
-            <header className="max-w-6xl mx-auto bg-white border-b sticky top-0 z-10 shadow-sm w-full">
+
+            <header className="max-w-6xl mx-auto bg-white border-b sticky top-0 z-10 shadow-sm w-full ">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex items-center h-20 px-4 gap-4">
-                        <h1 className="text-xl font-extrobold text-green-800 tracking-tight">척척밥상 공구 </h1>
-                        <div className="flex-1">
-                            <form action="/" method="GET" className="relative">
+                        <Link href="/" className="shrink-0">
+                        <h1 className="text-xl font-extrobold text-green-800 tracking-tight shrink-0">척척밥상 공구 </h1>
+                        </Link>
+                        <div className="flex-1 flex items-center gap-3">
+                            <form action="/" method="GET" className="relative flex-1">
                                 <input type="hidden" name="category" value={selectedCategory}/>
                                 <input
                                     type="text"
@@ -140,11 +144,16 @@ export default async function Home({searchParams,}: {
                                     🔍
                                 </button>
                             </form>
+                            <Link href="/cart" className="relative p-2 text-gray-700 hover:text-green-800 transtion-colors">
+                                <span className="text-2xl">🛒</span>
+                               <CartBadge/>
+
+                            </Link>
                         </div>
                     </div>
                     <nav className="flex overflow-x-auto no-scrollbar whitespace-nowrap px-2">
                         {categories.map((cat) => (
-                            <a
+                            <Link
                                 key={cat.id}
                                 href={`?category=${cat.id}`}
                                 className={`flex-1 text-center py-3 px-4 text-sm font-medium transition-color ${
@@ -154,7 +163,8 @@ export default async function Home({searchParams,}: {
                                 }`}
                             >
                                 {cat.name}
-                            </a>
+                            </Link>
+
                         ))}
                     </nav>
                 </div>
@@ -163,8 +173,8 @@ export default async function Home({searchParams,}: {
             {/* --- 메인 콘텐츠 영역 (하나의 main으로 통합) --- */}
             <main className="max-w-6xl mx-auto p-3 sm:p-6">
 
-                {/* 1. 큐레이션 섹션들 (검색 중이 아닐 때만 보여주는 것이 깔끔합니다) */}
-                {!searchQuery && selectedCategory === '전체' && (
+
+                {!searchQuery && selectedCategory === 'C000' && (
                     <div className="space-y-10 mb-12">
                         {/* 신년 선물 세트 */}
                         <section>
@@ -341,6 +351,8 @@ export default async function Home({searchParams,}: {
                                 <div className="bg-white rounded-lg shadow-sm overflow-hidden flex flex-col relative">
                                     <div className="relative aspect-square bg-gray-100 flex items-center justify-center">
                                         <span className="text-gray-300 text-xs">No Image</span>
+
+
                                         {isSoldOut && (
                                             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                                                 <span className="text-white font-bold border-2 border-white px-3 py-1 rounded"> 품절</span>
