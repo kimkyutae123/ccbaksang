@@ -5,7 +5,7 @@
 ---
 
 ## 🚀 배포 주소
-- **Vercel 배포 링크**: [](https://ccbaksang.vercel.app/)
+- **Vercel 배포 링크**: [(https://ccbaksang.vercel.app/)]
 
 ---
 
