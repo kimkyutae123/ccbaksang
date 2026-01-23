@@ -72,7 +72,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     };
 
     return (
-        // [중요] 새로 만든removeFromCart와 updateQuantity를 value에 꼭 넣어줘야 합니다!
+
         <CartContext.Provider value={{
             cart,
             cartCount,

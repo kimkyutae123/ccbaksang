@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efad803a-9607-47b1-8938-23407489fa5c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/app/cart/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/context/CartContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/AddToCartButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/CartBadge.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ProductAction.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/order/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/cart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/cart/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/context/CartContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/context/CartContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/product/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProductAction.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductAction.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +57,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;26.01.16&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;26-01-19&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -109,6 +106,8 @@
       <workItem from="1768546205389" duration="16467000" />
       <workItem from="1768801613107" duration="13142000" />
       <workItem from="1768823026727" duration="708000" />
+      <workItem from="1769150143183" duration="11268000" />
+      <workItem from="1769167385956" duration="772000" />
     </task>
     <servers />
   </component>
@@ -121,24 +120,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/layout.tsx</url>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/cart/page.tsx</url>
-          <line>129</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/cart/page.tsx</url>
-          <line>73</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/cart/page.tsx</url>
-          <line>69</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

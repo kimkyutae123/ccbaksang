@@ -1,5 +1,5 @@
 'use client';
-
+import { useRouter } from 'next/navigation';
 import { useCart } from "@/app/context/CartContext";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function CartPage() {
     const { cart, removeFromCart, updateQuantity } = useCart();
     const [recommendations, setRecommendations] = useState<any[]>([]);
-
+    const router = useRouter();
     useEffect(() => {
         fetch('https://api.zeri.pics')
             .then(res => res.json())
@@ -124,9 +124,10 @@ export default function CartPage() {
                 <div className="max-w-2xl mx-auto p-3 flex items-center justify-between gap-4">
                     <div>
                         <p className="text-[10px] text-stone-700 font-medium">총 결제금액 ({cart.length}건)</p>
-                        <p className="text-lg font-black text-stone-700">{totalProductPrice.toLocaleString()}원</p>
-                    </div>
-                    <button className="flex-1 bg-green-800 text-white h-12 rounded-lg font-bold text-base active:scale-95 transition-all">
+                            </div>
+                    <button
+                        onClick={() => router.push(`/order`)}
+                        className="flex-1 bg-green-800 text-white h-12 rounded-lg font-bold text-base active:scale-95 transition-all">
                         주문하기
                     </button>
                 </div>
