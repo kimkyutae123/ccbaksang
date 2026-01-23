@@ -337,7 +337,7 @@ export default async function Home({searchParams,}: {
                 </div>
 
                 {/* 4. 상품 그리드 리스트 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 p-3">
                     {sortedProducts.map((product) => {
                         const isSoldOut = product.current >= product.limit;
                         const percent = Math.floor((product.current / product.limit) * 100);
@@ -387,7 +387,7 @@ export default async function Home({searchParams,}: {
                         );
                     })}
                 </div>
-            </main> {/* main 닫기 */}
-        </div> /* 최상위 div 닫기 */
+            </main>
+        </div>
     );
 }
